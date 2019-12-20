@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Transition: UIStoryboardSegue {
+class ScaleTransition: UIStoryboardSegue {
 
     override func perform() {
         destination.transitioningDelegate = self
@@ -16,7 +16,7 @@ class Transition: UIStoryboardSegue {
     }
 }
 
-extension Transition: UIViewControllerTransitioningDelegate {
+extension ScaleTransition: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
       
         return TransitionPresenter()
@@ -55,15 +55,13 @@ class TransitionPresenter: NSObject, UIViewControllerAnimatedTransitioning {
         let finalFrame = transitionContext.finalFrame(for: toViewController)
         
         UIView.animate(withDuration: duration, animations: {
-            
+
             toView?.frame = finalFrame
             toView?.layoutIfNeeded()
-            
+
         }) { (finished) in
             transitionContext.completeTransition(true)
         }
         
     }
-    
-    
 }

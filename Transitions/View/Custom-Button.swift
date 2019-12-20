@@ -26,6 +26,7 @@ import UIKit
     
     func sharedInit() {
         refreshCorners(value: cornerRadius)
+        refreshBorder(width: borderWidth)
     }
     
        @IBInspectable var cornerRadius: CGFloat = 15 {
@@ -33,13 +34,21 @@ import UIKit
                refreshCorners(value: cornerRadius)
            }
        }
-}
-
-
-extension CustomButton {
-   
+ 
     
+    @IBInspectable var borderWidth: CGFloat = 15 {
+        didSet {
+            refreshCorners(value: cornerRadius)
+             refreshBorder(width: borderWidth)
+        }
+    }
+   
+//MARK: - HELPING FUNCTIONS
     func refreshCorners(value: CGFloat) {
         layer.cornerRadius = value
+    }
+    func refreshBorder(width: CGFloat){
+        layer.borderWidth = width
+        layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
     }
 }

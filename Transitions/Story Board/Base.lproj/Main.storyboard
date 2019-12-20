@@ -15,39 +15,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Aarifah" translatesAutoresizingMaskIntoConstraints="NO" id="tJH-MB-fj6">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Aarifah" translatesAutoresizingMaskIntoConstraints="NO" id="tJH-MB-fj6" customClass="Custom_ImageView" customModule="Transitions" customModuleProvider="target">
                                 <rect key="frame" x="94.5" y="113" width="225" height="217"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="217" id="8Dt-wU-b96"/>
-                                    <constraint firstAttribute="width" constant="225" id="uXG-EP-3C3"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8Q-ko-o5N" customClass="CustomButton" customModule="Transitions" customModuleProvider="target">
-                                <rect key="frame" x="143.5" y="462" width="127" height="30"/>
-                                <color key="backgroundColor" red="0.13350942730000001" green="0.29707628489999999" blue="0.32067108150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="vvA-mi-CR0"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8Q-ko-o5N" customClass="CustomButton" customModule="Transitions" customModuleProvider="target">
+                                <rect key="frame" x="124" y="360" width="167" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.2527923882" blue="1" alpha="0.56568386130136983" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Perform Transition"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="performTransition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6f8-qJ-A7f"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="f8Q-ko-o5N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0vL-z2-Wfh"/>
-                            <constraint firstItem="f8Q-ko-o5N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Eg-nR-oQb"/>
-                            <constraint firstItem="f8Q-ko-o5N" firstAttribute="top" secondItem="tJH-MB-fj6" secondAttribute="bottom" constant="132" id="T0o-GW-hku"/>
-                            <constraint firstItem="tJH-MB-fj6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jFY-Wd-5CJ"/>
-                            <constraint firstItem="tJH-MB-fj6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="69" id="qcT-dZ-Bei"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="button" destination="f8Q-ko-o5N" id="439-xR-Ylm"/>
                         <outlet property="myImage" destination="tJH-MB-fj6" id="SCY-Zy-5S6"/>
-                        <segue destination="eRK-IN-S7u" kind="presentation" identifier="go" customClass="Transition" customModule="Transitions" customModuleProvider="target" modalPresentationStyle="formSheet" id="bCr-MS-9mh"/>
+                        <segue destination="eRK-IN-S7u" kind="presentation" identifier="go" customClass="ScaleTransition" customModule="Transitions" customModuleProvider="target" modalPresentationStyle="formSheet" id="bCr-MS-9mh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -63,28 +65,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNm-3g-niL" customClass="CustomButton" customModule="Transitions" customModuleProvider="target">
-                                <rect key="frame" x="282" y="64" width="88" height="30"/>
+                                <rect key="frame" x="20" y="20" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.51602632709999996" green="0.1151273545" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="border">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="back:" destination="eRK-IN-S7u" eventType="touchUpInside" id="34U-CD-AcJ"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Aarifah" translatesAutoresizingMaskIntoConstraints="NO" id="0GU-yf-2VT">
-                                <rect key="frame" x="-1" y="215" width="415" height="493"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="493" id="DRp-nf-MjI"/>
-                                    <constraint firstAttribute="width" constant="415" id="h3A-SV-dg4"/>
-                                </constraints>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Aarifah" translatesAutoresizingMaskIntoConstraints="NO" id="0GU-yf-2VT" customClass="Custom_ImageView" customModule="Transitions" customModuleProvider="target">
+                                <rect key="frame" x="-1" y="97" width="415" height="493"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="18"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="0GU-yf-2VT" firstAttribute="centerX" secondItem="jbE-F4-nai" secondAttribute="centerX" id="4P0-vJ-8II"/>
-                            <constraint firstItem="0GU-yf-2VT" firstAttribute="centerY" secondItem="jbE-F4-nai" secondAttribute="centerY" id="K8w-Ao-37Z"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="suZ-NS-O1H"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bga-qn-I9d"/>
