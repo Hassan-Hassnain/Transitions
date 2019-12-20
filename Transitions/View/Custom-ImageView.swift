@@ -28,6 +28,7 @@ class Custom_ImageView: UIImageView {
      func sharedInit() {
          refreshCorners(value: cornerRadius)
          refreshBorder(width: borderWidth)
+         refreshColor(color: borderColor)
      }
      
         @IBInspectable var cornerRadius: CGFloat = 15 {
@@ -42,12 +43,22 @@ class Custom_ImageView: UIImageView {
            }
        }
     
+     @IBInspectable var borderColor: UIColor = UIColor.black {
+       didSet {
+         layer.borderColor = borderColor.cgColor
+       }
+     }
+
+    
 //MARK: - HELPING FUNCTIONS
      func refreshCorners(value: CGFloat) {
          layer.cornerRadius = value
      }
     func refreshBorder(width: CGFloat){
            layer.borderWidth = width
-           layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
        }
+    func refreshColor(color: UIColor){
+        layer.borderColor = color.cgColor
+    }
+    
 }

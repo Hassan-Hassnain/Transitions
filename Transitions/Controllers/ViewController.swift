@@ -19,35 +19,66 @@ class ViewController: UIViewController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        button.alpha = 1.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        myImage.center.y -= view.bounds.height
+
         button.center.x += view.bounds.width
+        myImage.center.y -= view.bounds.height
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
-        
+
         UIView.animate(withDuration: 1.2) {
             self.button.center.x -= self.view.bounds.width
         }
-        
+
         UIView.animate(withDuration: 1.2) {
             self.myImage.center.y += self.view.bounds.height
         }
-            
+
     }
     
 
     @IBAction func performTransition(_ sender: UIButton) {
+        
+        sender.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+
+        UIView.animate(withDuration: 2.0,
+                                   delay: 0,
+                                   usingSpringWithDamping: CGFloat(0.20),
+                                   initialSpringVelocity: CGFloat(6.0),
+                                   options: UIView.AnimationOptions.allowUserInteraction,
+                                   animations: {
+                                    sender.transform = CGAffineTransform.identity
+            },
+                                   completion: { Void in()  }
+        )
+        
+        //Below code is working
+        
+//        UIView.animate(withDuration: 0.6,
+//        animations: {
+//            self.button.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+//        },
+//        completion: { _ in
+//            UIView.animate(withDuration: 0.6) {
+//                self.button.transform = CGAffineTransform.identity
+//            }
+//        })
+
+
         performSegue(withIdentifier: "go", sender: self)
     }
-
+ 
+    
 }
 extension ViewController: Scaleable{
     var imageFrame: UIView  {return myImage}
 }
+
 
 //MARK: -
 
