@@ -22,11 +22,13 @@
                                     <constraint firstAttribute="width" constant="225" id="uXG-EP-3C3"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8Q-ko-o5N">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8Q-ko-o5N" customClass="CustomButton" customModule="Transitions" customModuleProvider="target">
                                 <rect key="frame" x="143.5" y="462" width="127" height="30"/>
+                                <color key="backgroundColor" red="0.13350942730000001" green="0.29707628489999999" blue="0.32067108150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vvA-mi-CR0"/>
                                 </constraints>
+                                <color key="tintColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Perform Transition"/>
                                 <connections>
                                     <action selector="performTransition:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6f8-qJ-A7f"/>
@@ -35,6 +37,7 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="f8Q-ko-o5N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0vL-z2-Wfh"/>
                             <constraint firstItem="f8Q-ko-o5N" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8Eg-nR-oQb"/>
                             <constraint firstItem="f8Q-ko-o5N" firstAttribute="top" secondItem="tJH-MB-fj6" secondAttribute="bottom" constant="132" id="T0o-GW-hku"/>
                             <constraint firstItem="tJH-MB-fj6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jFY-Wd-5CJ"/>
@@ -59,9 +62,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNm-3g-niL">
-                                <rect key="frame" x="282" y="64" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNm-3g-niL" customClass="CustomButton" customModule="Transitions" customModuleProvider="target">
+                                <rect key="frame" x="282" y="64" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.51602632709999996" green="0.1151273545" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="back"/>
                                 <connections>
                                     <action selector="back:" destination="eRK-IN-S7u" eventType="touchUpInside" id="34U-CD-AcJ"/>
@@ -89,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4ox-79-JGb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="600" y="-17"/>
+            <point key="canvasLocation" x="598.55072463768124" y="-17.410714285714285"/>
         </scene>
     </scenes>
     <resources>

@@ -15,6 +15,7 @@
 		3C4C7E5C23ABCDAC00CDDEF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C4C7E5A23ABCDAC00CDDEF9 /* LaunchScreen.storyboard */; };
 		3C4C7E6423ABCF5C00CDDEF9 /* ToVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C4C7E6323ABCF5C00CDDEF9 /* ToVC.swift */; };
 		3C54AECA23ABD2F000A53A3F /* Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C54AEC923ABD2F000A53A3F /* Transition.swift */; };
+		3CF319CA23ACCE4D0007E1C9 /* Custom-Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF319C923ACCE4D0007E1C9 /* Custom-Button.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3C4C7E5D23ABCDAC00CDDEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C4C7E6323ABCF5C00CDDEF9 /* ToVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToVC.swift; sourceTree = "<group>"; };
 		3C54AEC923ABD2F000A53A3F /* Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transition.swift; sourceTree = "<group>"; };
+		3CF319C923ACCE4D0007E1C9 /* Custom-Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Custom-Button.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,15 +64,40 @@
 			children = (
 				3C4C7E4F23ABCDA500CDDEF9 /* AppDelegate.swift */,
 				3C4C7E5123ABCDA500CDDEF9 /* SceneDelegate.swift */,
-				3C4C7E5323ABCDA500CDDEF9 /* ViewController.swift */,
-				3C4C7E6323ABCF5C00CDDEF9 /* ToVC.swift */,
-				3C54AEC923ABD2F000A53A3F /* Transition.swift */,
-				3C4C7E5523ABCDA500CDDEF9 /* Main.storyboard */,
+				3CF319C723ACCC370007E1C9 /* Controllers */,
+				3CF319C823ACCD8D0007E1C9 /* Transition-Animation */,
+				3CF319C623ACCC1B0007E1C9 /* Story Board */,
 				3C4C7E5823ABCDAC00CDDEF9 /* Assets.xcassets */,
-				3C4C7E5A23ABCDAC00CDDEF9 /* LaunchScreen.storyboard */,
 				3C4C7E5D23ABCDAC00CDDEF9 /* Info.plist */,
+				3CF319C923ACCE4D0007E1C9 /* Custom-Button.swift */,
 			);
 			path = Transitions;
+			sourceTree = "<group>";
+		};
+		3CF319C623ACCC1B0007E1C9 /* Story Board */ = {
+			isa = PBXGroup;
+			children = (
+				3C4C7E5523ABCDA500CDDEF9 /* Main.storyboard */,
+				3C4C7E5A23ABCDAC00CDDEF9 /* LaunchScreen.storyboard */,
+			);
+			path = "Story Board";
+			sourceTree = "<group>";
+		};
+		3CF319C723ACCC370007E1C9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3C4C7E5323ABCDA500CDDEF9 /* ViewController.swift */,
+				3C4C7E6323ABCF5C00CDDEF9 /* ToVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		3CF319C823ACCD8D0007E1C9 /* Transition-Animation */ = {
+			isa = PBXGroup;
+			children = (
+				3C54AEC923ABD2F000A53A3F /* Transition.swift */,
+			);
+			path = "Transition-Animation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +171,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CF319CA23ACCE4D0007E1C9 /* Custom-Button.swift in Sources */,
 				3C54AECA23ABD2F000A53A3F /* Transition.swift in Sources */,
 				3C4C7E5423ABCDA500CDDEF9 /* ViewController.swift in Sources */,
 				3C4C7E6423ABCF5C00CDDEF9 /* ToVC.swift in Sources */,
